@@ -1,3 +1,4 @@
+from typing import Tuple
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -14,24 +15,24 @@ class LR:
         self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(
             X, y, test_size=0.3, random_state=101
             )
-    def train(self):
+    def train(self)->None:
         self.model = LinearRegression()
         self.model.fit(self.X_train, self.y_train)
     
-    def predict(self):
+    def predict(self)->None:
         self.y_pred = self.model.predict(self.X_test)
     
-    def metrics(self):
+    def metrics(self)->None:
         self.MAE = metrics.mean_absolute_error(self.y_test, self.y_pred)
         self.MSE = metrics.mean_squared_error(self.y_test, self.y_pred)
         self.RMSE = np.sqrt(self.MSE)
 
-def main():
+def main()->Tuple[float, float, float]:
     lr = LR()
     lr.train()
     lr.predict()
     lr.metrics()
-    return lr.MAE, lr.MSE, lr.RMSE
+    return (lr.MAE, lr.MSE, lr.RMSE)
 
 if __name__ == '__main__':
     print(main())
