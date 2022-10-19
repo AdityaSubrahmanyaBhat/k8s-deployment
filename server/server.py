@@ -3,7 +3,7 @@ from .LR.LR import main, LR
 
 app = Flask(__name__)
 
-@app.route("/health", methods=["POST"])
+@app.route("/health", methods=["POST","GET"])
 def get_health():
     return jsonify({"status": "ok"})
 
