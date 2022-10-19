@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn import metrics
 
-from const import *
+from .const import *
 
 class LR:
     def __init__(self) -> None:    
