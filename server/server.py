@@ -3,11 +3,11 @@ from .LR.LR import main, LR
 
 app = Flask(__name__)
 
-@app.route("/health", methods=["POST","GET"])
+@app.route("/health", methods=["GET"])
 def get_health():
     return jsonify({"status": "ok"})
 
-@app.route("/run", methods=["POST"])
+@app.route("/run", methods=["GET"])
 def run_linear_regression():
     MAE, MSE, RMSE = main()
     return jsonify({"MAE": MAE, "MSE": MSE, "RMSE": RMSE})
