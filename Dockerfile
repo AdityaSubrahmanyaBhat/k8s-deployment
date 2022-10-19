@@ -1,4 +1,4 @@
-FROM python:3.8.0-slim
+FROM python:3.10-slim
 
 WORKDIR /k8s-deployment
 COPY requirements.txt requirements.txt
