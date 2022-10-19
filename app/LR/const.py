@@ -1,1 +1,4 @@
-DATASET = 'real_estate.csv'
+import os
+
+dirname = os.path.dirname(__file__)
+DATASET = os.path.join(dirname,'real_estate.csv')

@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn import metrics
 
-from .const import *
+from const import *
 
 class LR:
     def __init__(self) -> None:    
@@ -15,6 +15,7 @@ class LR:
         self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(
             X, y, test_size=0.3, random_state=101
             )
+
     def train(self)->None:
         self.model = LinearRegression()
         self.model.fit(self.X_train, self.y_train)
