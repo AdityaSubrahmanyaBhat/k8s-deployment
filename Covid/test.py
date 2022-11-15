@@ -58,4 +58,15 @@ class TSF:
         self.MSE_varmax_sm = metrics.mean_squared_error(self.small_test, self.varmax_sm_pred)
         self.RMSE_varmax_sm = np.sqrt(self.MSE_varmax_sm)
 
+        print(self.MAE_sarimax_med)
+        print(self.RMSE_sarimax_med)
+        print()
+        print(self.MAE_varmax_med)
+        print(self.RMSE_varmax_med)
+        print()
+        print(self.MAE_sarimax_sm)
+        print(self.RMSE_sarimax_sm)
+        print()
+        print(self.MAE_varmax_sm)
+        print(self.RMSE_varmax_sm)
         
